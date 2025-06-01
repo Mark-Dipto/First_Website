@@ -4,4 +4,15 @@ channel = "stable-24_05"
 
 [deployment]
 run = ["sh", "-c", "python app.py"]
-print("Hello World")
+
+[workflows]
+runButton = "Run Python App"
+
+[[workflows.workflow]]
+name = "Run Python App"
+author = 21399002
+mode = "sequential"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "python3 app.py"
