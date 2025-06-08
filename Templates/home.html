@@ -47,17 +47,7 @@
       <h2> Open Positions</h2>
       <div>
         {% for job in jobs %}
-        <div style="margin-bottom:16px;">
-          <h4 style="color:rgb(120,120,120);margin-bottom:4px;">
-            {{job["Title"]}}
-          </h4>
-          <div><b> Location </b>:{{job["Location"]}}</div>
-          {% if job["Salary"] %}
-          <div>
-            <b> Salary </b>:{{job["Salary"]}}
-          </div>
-          {% endif %}
-        </div>
+          {% include "jobitem.html"%}
         {% endfor %}
       </div>
       <div style="text-align:center">
